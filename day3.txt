@@ -1,24 +1,25 @@
-public class Food {
-	public String name;
-	public String type;
+public class Food { // declare class Food
+	public String name; // class attribute no given value
+	public String type; // class attribute no given value
 
-	public Food(String name, String type) {
-		this.name = name;
-		this.type = type;
+	public Food(String name, String type) { // constructor with two parameters
+		this.name = name; // this keyword to refer to class attribute
+		this.type = type; // this keyword to refer to class attribute
 	}
 
-	public void cook() {
-		if (!name.contains("cooked")) {
-			name = "cooked " + name;
+	public void cook() { // declare cook method
+		if (!name.contains("cooked")) { // if statement, condition: if name does not contain "cooked"
+			name = "cooked " + name; // add "cooked" to name
 		}
 	}
 }
 
-public class Main {
-	public static void main(String[] args) {
-		Food myFood = new Food("potato", "vegetable");
-		myFood.cook();
+public class Main { // declare Main class
+	public static void main(String[] args) { // main method signature
+		Food myFood = new Food("potato", "vegetable"); // initialize object myFood with name and type
+		myFood.cook(); // Call the public method
 
-		System.out.println(myFood.name);
+		System.out.println(myFood.name); // print "cooked potato"
 	}
 }
+Summary: Initialize object using the parameters from class Food then in cook method add the word "cooked" to the name parameter
