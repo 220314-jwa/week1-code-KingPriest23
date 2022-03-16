@@ -1,13 +1,19 @@
-int score = 80;
+int score = 80; // declare int value 80
 
-String result;
+String result; // declare string
 
-if (score == 80) {
-	result = "You passed!";
-} else if (score > 80) {
-	result = "You did great!";
-} else {
-	result = "You did not pass. Try again!";
+if (score == 80) { // if statement with condition
+	result = "You passed!"; // string defined 
+} else if (score > 80) { // else if statement with condition
+	result = "You did great!"; // string defined
+} else { // else defined
+	result = "You did not pass. Try again!"; // string defined
 }
 
-System.out.println(result);
+System.out.println(result); // print string variable
+
+Summary: Declare a integer variable named score with value of 80. Declare a
+string named result. Created an if statement, if condition is true (score is
+equal to 80) then print "You passed".
+:wq
+
