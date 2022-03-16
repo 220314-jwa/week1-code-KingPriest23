@@ -1,23 +1,23 @@
-public static void main(String[] args) {
-	String[] foodTypes = getFoodTypes();
-	String myType = foodTypes[2];
+public static void main(String[] args) { // main method signature
+	String[] foodTypes = getFoodTypes(); // declare string array given value method
+	String myType = foodTypes[2]; // declare string given value "dinner"
 
-	String[] foodsOfMyType = getFoodsByType(myType);
+	String[] foodsOfMyType = getFoodsByType(myType); // declare string array given value method with "dinner" parameter
 	
-	for (String food : foodsOfMyType) {
-		System.out.println(food);
+	for (String food : foodsOfMyType) { // for each loop, loops through each food in "dinner"
+		System.out.println(food); // prints each food
 	}
 }
 
-public static String[] getFoodTypes() {
-	String[] foodTypes = {"breakfast","lunch","dinner","dessert","snack"};
-	return foodTypes;
+public static String[] getFoodTypes() { // declare array method 
+	String[] foodTypes = {"breakfast","lunch","dinner","dessert","snack"}; // array of meals
+	return foodTypes; // returns each index in list
 }
 
-public static String[] getFoodsByType(String type) {
-	String[] foods = new String[3];
+public static String[] getFoodsByType(String type) { // array method with string parameter
+	String[] foods = new String[3]; // new array with three indexs
 
-	switch(type) {
+	switch(type) { // declare switch statement
 	case "breakfast":
 		foods[0] = "pancakes";
 		foods[1] = "cereal";
@@ -50,3 +50,4 @@ public static String[] getFoodsByType(String type) {
 
 	return foods;
 }
+Summary: Returns case "dinner": foods 1 - 3 "curry", "stir fry", "burger"; In the method getFoodTypes, select which meal then print the corresponding foods associated with meal.
