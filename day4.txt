@@ -1,12 +1,14 @@
-public class Main {
-	public static void main(String[] args) {
-		Javalin app = Javalin.create();
+public class Main { // Main class
+	public static void main(String[] args) { // main method signature
+		Javalin app = Javalin.create(); // Initialize the Javalin object, static method returns the object
 
-		app.start();
+		app.start(); // starts up the server to look at for http requests
 
-		app.get("foods", ctx -> {
-			Food myFood = new Food("carrots", "vegetable");
-			ctx.result("You got: " + myFood.name);
+		app.get("foods", ctx -> { // GET request sent to URI ends with "foods"
+			Food myFood = new Food("carrots", "vegetable"); // Create object from Food class with name and type parameter
+			ctx.result("You got: " + myFood.name); // return "You go: carrots"
 		});
 	}
 }
+// Summary: Create Javalin object, start the object, call a get method, return the name method from Food class
+
