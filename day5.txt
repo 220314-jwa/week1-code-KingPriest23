@@ -1,25 +1,27 @@
-<html>
-	<head>
-		<title>Daily Code Review</title>
-	</head>
-	<body>
-		<h1>Cook your food!</h1>
-		<form action="http://localhost:8080/cook">
-			<label for="foodName">Food Name:</label>
-			<input id="foodName" name="foodName" type="text">
-			<br>
-			<button type="submit">Submit</button>
-		</form>
-	</body>
-</html>
+<html> // root element of HTML page
+	<head> // contains the metadata info about HTML page
+		<title>Daily Code Review</title> // specifies title for HTML
+	</head> // closing tag for the metadat
+	<body> // opening tag for the document's body (visible contents)
+		<h1>Cook your food!</h1> // element with large heading
+		<form action="http://localhost:8080/cook"> // Collects user input, sent to server to process, (action attribute defines the website to be sent to)
+			<label for="foodName">Food Name:</label> // defines label for the foodName text box
+			<input id="foodName" name="foodName" type="text"> // for the text-box input field named foodName
+			<br> // to break the line 
+			<button type="submit">Submit</button> // creating a submit button for the input field
+		</form> // closing tag
+	</body> // closing tag
+</html> // closing tag
 
-public static void main(String[] args) {
-	Javalin app = Javalin.create();
-	app.start();
+public static void main(String[] args) { // main method signature
+	Javalin app = Javalin.create(); // creating an Javalin object
+	app.start(); // telling the object to look out for an http request
 
-	app.get("cook", ctx -> {
-		String foodSent = ctx.formParam("foodName");
-		String cookedFood = "cooked " + foodSent;
-		ctx.result("Here's your food! <br>" + cookedFood);
+	app.get("cook", ctx -> { // sending a http get request to "front-end" html
+		String foodSent = ctx.formParam("foodName"); // String value using the html form's field name
+		String cookedFood = "cooked " + foodSent; // String with value of "cooked" + whatever the input is
+		ctx.result("Here's your food! <br>" + cookedFood); // Returns "Here's your food!", skips to the next line, adds "cooked" and whatever placed in input field
 	});
 }
+// Summary: Created html document that submits an input to the "back-end" using Javalin to post to another page in the browser
+ 
